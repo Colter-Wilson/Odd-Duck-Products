@@ -1,0 +1,15 @@
+#img-container {
+  display: flex;
+  flex-direction: row;
+  width: 50%;
+  margin: auto;
+}
+#img-container img {
+  width: 30%;
+}
+body {
+  background-color: aquamarine;
+}
+
+
+
