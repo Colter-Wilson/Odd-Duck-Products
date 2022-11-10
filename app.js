@@ -14,7 +14,8 @@ let resultsBtn = document.getElementById('show-results-btn');
 let resultsContainer = document.getElementById('results-container');
 
 
-// pragma globals
+
+//  pragma globals
 
 let voteCount = 25;
 
@@ -42,7 +43,11 @@ function renderimages() {
   let imgThreeRandom = randomProduct();
 
   while (imgOneRandom === imgTwoRandom) {
-    imgTwoRandom = randomProduct(); }
+    imgTwoRandom = randomProduct(); 
+   }
+   while (imgOneRandom === imgThreeRandom || imgTwoRandom === imgThreeRandom) {
+    imgThreeRandom = randomProduct();
+   }
     
     
     
@@ -67,7 +72,7 @@ function renderimages() {
 
 // Dom chart ref
 
-// let chartContext = document.getElementById('my-chart').getContext('2d'); 
+let myChart = document.getElementById ('myChart');
 
 // Chart Object Creation
 
