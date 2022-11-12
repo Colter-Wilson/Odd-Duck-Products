@@ -74,6 +74,16 @@ function renderimages() {
 
 // Pragma executables
 
+let retrievedProducts = localStorage.getItem('myProducts');
+
+let parsedProducts = JSON.parse(retrievedProducts);
+
+if (parsedProducts) {
+  productArray = parsedProducts;
+} else {
+
+
+
 let bag = new Product
   ('bag');
 let banana = new Product('banana');
@@ -101,6 +111,8 @@ let wineglass = new Product('wine-glass');
 
 productArray.push(bag, banana, bathroom, boots, breakfast, bubblegum, chair, cthulhu, dogduck, dragon, pen, petsweep, scissors, shark, sweep, tauntaun, unicorn, watercan, wineglass);
 
+}
+
 
 // Pragma Event-Handlers
 
@@ -115,6 +127,8 @@ function handleShowResults(event) {
     }
   }
   resultsBtn.removeEventListener('click', handleShowResults);
+
+
 
   let productNames = [];
   let productViews = [];
@@ -192,6 +206,12 @@ function handleImageClick(event) {
 
   if (voteCount === 0) {
     imageContainer.removeEventListener('click', handleImageClick);
+
+    let stringifiedProducts = JSON.stringify(productArray);
+
+    console.log('stringified products >>>>>>', stringifiedProducts);
+
+    localStorage.setItem('myProducts', stringifiedProducts);
   }
 }
 
